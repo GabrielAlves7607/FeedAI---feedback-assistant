@@ -1,33 +1,22 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import APIRouter
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import requests
 
-app = FastAPI()
 router = APIRouter()
 
-# Suas credenciais da API Verbeux
-API_KEY = "a453729a-4978-49c3-926e-ea59c6e25412"
-ASSISTANT_ID = 806
+# Verbeux API credentials
+API_KEY = "YOUR_API_KEY_HERE"
+ASSISTANT_ID = "YOUR_ASSISTANT_ID_HERE"
 
-
-# Configuração do CORS
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:5500", "http://127.0.0.1:5500"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# Modelo para a mensagem
+# Pydantic model for incoming chat messages
 class Message(BaseModel):
     message: str
 
-# Endpoint de proxy
+# Proxy endpoint to forward chat messages to Verbeux Generative API
 @router.post("/chat")
 def chat(msg: Message):
-    url = f"generative-api.verbeux.com.br/session/{ASSISTANT_ID}"
+    url = f"https://generative-api.verbeux.com.br/v1/assistants/{ASSISTANT_ID}/completion"
 
     headers = {
         "Authorization": f"Bearer {API_KEY}",
@@ -36,8 +25,7 @@ def chat(msg: Message):
 
     body = {
         "input": {
-            "message": msg.message,
-            "assistant_id": 806
+            "text": msg.message
         }
     }
 
@@ -52,7 +40,4 @@ def chat(msg: Message):
     except requests.exceptions.Timeout as errt:
         return {"error": f"Timeout Error: {errt}"}
     except requests.exceptions.RequestException as err:
-        return {"error": f"Something went wrong: {err}"}
-
-# Incluindo as rotas no app
-app.include_router(router)
+        return {"error": f"Unexpected Error: {err}"}
