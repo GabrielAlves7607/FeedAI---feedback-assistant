@@ -95,7 +95,7 @@ API_KEY = "SUA_API_KEY_AQUI"
 ASSISTANT_ID = "UUID_DO_SEU_ASSISTENTE"
 ```
 
-👉 Se ainda não tiver esse UUID, peça ao suporte ou ao dev da Verbeux.
+👉 Se ainda não tiver esse UUID peça ao suporte
 
 ---
 
