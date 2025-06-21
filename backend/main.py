@@ -8,36 +8,36 @@ from classifier import classify_feedback
 from proxy import router as proxy_router
 from fastapi.middleware.cors import CORSMiddleware
 
-# Inicializa a aplicação FastAPI
+# Initialize FastAPI app
 app = FastAPI()
 
+# Configure CORS (adjust allowed origins if needed)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Ou ajuste para o domínio do seu frontend
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Configura os arquivos estátivos 
+# Mount static files (CSS, JS, etc.)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-# Inicializa o banco de dados
+# Initialize the database
 init_db()
 
-# Define o diretório dos templates HTML
+# HTML template directory
 templates = Jinja2Templates(directory="templates")
 
-# Modelo de entrada dos dados (pydantic)
+# Pydantic input model for feedback
 class FeedbackIn(BaseModel):
     message: str
     branch: str
 
-
-# Endpoint para criar um novo feedback
+# Endpoint to submit a new feedback
 @app.post("/submit/")
 def submit_feedback(feedback: FeedbackIn):
-    # Classifica a mensagem (compliment, complaint ou neutral)
+    # Classify the feedback message (compliment, complaint, or neutral)
     classification = classify_feedback(feedback.message)
     db = SessionLocal()
     try:
@@ -58,8 +58,7 @@ def submit_feedback(feedback: FeedbackIn):
     finally:
         db.close()
 
-
-# Endpoint para listar todos os feedbacks (JSON)
+# Endpoint to list all feedbacks (JSON)
 @app.get("/feedbacks/")
 def get_all_feedbacks():
     db = SessionLocal()
@@ -69,8 +68,7 @@ def get_all_feedbacks():
     finally:
         db.close()
 
-
-# Endpoint da página web principal (/)
+# Endpoint for the main HTML page (/)
 @app.get("/", response_class=HTMLResponse)
 def read_root(request: Request):
     db = SessionLocal()
@@ -83,5 +81,5 @@ def read_root(request: Request):
     finally:
         db.close()
 
-# Incluindo as rotas do proxy
+# Include Verbeux API proxy routes
 app.include_router(proxy_router)
