@@ -128,8 +128,10 @@ Body JSON:
 
 ---
 
-✅ Exemplo de Funcionamento da FeedAI ✅
-Abaixo estão capturas de tela que comprovam que a FeedAI (Assistente da Verbeux) está funcionando corretamente e respondendo as mensagens enviadas:
+## ✅ Exemplo de Funcionamento da FeedAI ✅
+
+```Abaixo estão capturas de tela que comprovam que a FeedAI (Assistente da Verbeux) está funcionando corretamente e respondendo as mensagens enviadas:
+```
 
 🎤 Exemplo de Resposta da FeedAI em um Chat:
 ![image](https://github.com/user-attachments/assets/f5626ad4-878d-499c-a4f5-9fbee027c84f)
