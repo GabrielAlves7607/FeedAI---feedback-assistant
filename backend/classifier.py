@@ -1,0 +1,17 @@
+import spacy
+
+nlp = spacy.load("pt_core_news_sm")
+
+def classify_feedback(message: str) -> str:
+    compliments = ["ótimo", "excelente", "gostei", "bom", "maravilhoso", "parabéns", "incrível"]
+    complaints = ["ruim", "horrível", "péssimo", "reclamação", "lento", "demorado", "problema", "erro"]
+
+    lower_message = message.lower()
+    
+    if any(word in lower_message for word in compliments):
+        return "compliment"
+    elif any(word in lower_message for word in complaints):
+        return "complaint"
+    else:
+        return "neutral"
+
