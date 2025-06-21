@@ -1,4 +1,3 @@
-Perfeito! Aqui está um **README.md atualizado, organizado e pronto para seu projeto Feedback Assistant com Proxy para Verbeux FeedAI:**
 
 ---
 
