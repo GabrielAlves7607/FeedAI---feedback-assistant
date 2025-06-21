@@ -139,7 +139,7 @@ Aqui estão dois exemplos visuais mostrando que a **FeedAI (Assistente da Verbeu
 Abaixo uma captura de tela mostrando a FeedAI respondendo normalmente dentro do chat:
 
 <p align="center">
-  <img src="static/images/feedai-chat.png" alt="Exemplo de Chat com a FeedAI" width="400"/>
+  <img src="backend/static/images/feedai-chat.png" alt="Exemplo de Chat com a FeedAI" width="400"/>
 </p>
 
 ---
@@ -149,7 +149,7 @@ Abaixo uma captura de tela mostrando a FeedAI respondendo normalmente dentro do 
 Nesta imagem, é possível ver o painel de métricas do assistente dentro da plataforma Verbeux, mostrando a quantidade de mensagens, sessões e taxa de compreensão:
 
 <p align="center">
-  <img src="static/images/feedai-analytics.png" alt="Estatísticas FeedAI - Verbeux" width="600"/>
+  <img src="backend/static/images/feedai-analytics.png" alt="Estatísticas FeedAI - Verbeux" width="600"/>
 </p>
 
 ---
