@@ -122,7 +122,7 @@ Body JSON:
 ## 📝 Observações Importantes
 
 * O UUID usado deve ser de um **Assistente habilitado na Generative API da Verbeux**, senão o endpoint vai dar erro 404.
-* Lembre-se de manter sua **API Key segura**.
+* Lembre-se de não compartilhar sua **API Key segura**.
 * O projeto usa **SQLite** para simplificar o armazenamento local.
 
 ---
