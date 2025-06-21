@@ -128,3 +128,31 @@ Body JSON:
 
 ---
 
+## ✅ Exemplo de Funcionamento da FeedAI
+
+Aqui estão dois exemplos visuais mostrando que a **FeedAI (Assistente da Verbeux)** está funcionando corretamente em produção.
+
+---
+
+### 🗨️ Exemplo de Conversa com a FeedAI
+
+Abaixo uma captura de tela mostrando a FeedAI respondendo normalmente dentro do chat:
+
+<p align="center">
+  <img src="static/images/feedai-chat.png" alt="Exemplo de Chat com a FeedAI" width="400"/>
+</p>
+
+---
+
+### 📈 Dashboard de Uso e Estatísticas da FeedAI
+
+Nesta imagem, é possível ver o painel de métricas do assistente dentro da plataforma Verbeux, mostrando a quantidade de mensagens, sessões e taxa de compreensão:
+
+<p align="center">
+  <img src="static/images/feedai-analytics.png" alt="Estatísticas FeedAI - Verbeux" width="600"/>
+</p>
+
+---
+
+✅ **Conclusão:**  
+Esses registros confirmam que a integração com a FeedAI está funcional e o assistente está respondendo mensagens reais dos usuários.
