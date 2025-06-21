@@ -26,20 +26,21 @@ Este projeto faz parte de um **desafio técnico para a vaga de Estágio na Verbe
 ## 📂 Estrutura do Projeto
 
 ```
-feedback-assistant/
-├── src/
-│   ├── main.py          # FastAPI principal (rotas de feedback + inclusão da proxy)
-│   ├── proxy.py         # Proxy para a API Generative da Verbeux
-│   ├── database.py      # Configuração do banco (SQLAlchemy + SQLite)
-│   └── classifier.py    # Lógica simples para classificar feedbacks
-├── data/
-│   └── feedbacks.json   # Backup opcional de feedbacks
-├── templates/
-│   └── index.html       # Página HTML com listagem de feedbacks
+backend/
 ├── static/
-│   └── style.css        # Estilo da página web
-├── requirements.txt     # Dependências Python
-└── README.md            # Instruções e documentação
+│   ├── css/
+│   │   └── style.css          # Frontend styles
+│   └── js/
+│       └── script.js          # Frontend JavaScript (if needed)
+├── templates/
+│   └── index.html             # HTML template for feedback listing
+├── classifier.py              # Feedback classification logic
+├── database.py                # SQLAlchemy models and database setup
+├── main.py                    # FastAPI app and routes
+├── proxy.py                   # Proxy router for Verbeux FeedAI API
+├── requirements.txt           # Python dependencies
+└── README.md                  # Project documentation (this file)
+
 ```
 
 ---
